@@ -68,7 +68,7 @@ FORBIDDEN_COPY = (
 
 PINNED_ACTIONS = {
     ".github/workflows/update-stats.yml": (
-        "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
         "stats-organization/github-readme-stats-action@f9d8133845f40d659a754f78b8484983ba766448",
         "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
         "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c",
