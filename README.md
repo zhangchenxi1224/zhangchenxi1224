@@ -9,7 +9,13 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;duration=2800&amp;pause=900&amp;color=6366F1&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=720&amp;height=45&amp;lines=Hi%2C+I%27m+Chenxi+Zhang.;CS+Undergraduate+%40+Fudan+University;Multimodal+Memory+%C3%97+LLM+Post-Training" alt="Hi, I'm Chenxi Zhang — CS undergraduate at Fudan University, focused on multimodal memory and LLM post-training">
+  <picture>
+    <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=18&amp;duration=2400&amp;pause=700&amp;color=A78BFA&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=360&amp;height=38&amp;lines=Hi%2C+I%27m+Chenxi!;CS+Undergrad+%40+Fudan;Multimodal+Memory;LLM+Post-Training">
+    <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=18&amp;duration=2400&amp;pause=700&amp;color=4F46E5&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=360&amp;height=38&amp;lines=Hi%2C+I%27m+Chenxi!;CS+Undergrad+%40+Fudan;Multimodal+Memory;LLM+Post-Training">
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;duration=2800&amp;pause=900&amp;color=A78BFA&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=720&amp;height=45&amp;lines=Hi%2C+I%27m+Chenxi+Zhang.;CS+Undergraduate+%40+Fudan+University;Multimodal+Memory+%C3%97+LLM+Post-Training">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;duration=2800&amp;pause=900&amp;color=6366F1&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=720&amp;height=45&amp;lines=Hi%2C+I%27m+Chenxi+Zhang.;CS+Undergraduate+%40+Fudan+University;Multimodal+Memory+%C3%97+LLM+Post-Training">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;duration=2800&amp;pause=900&amp;color=6366F1&amp;center=true&amp;vCenter=true&amp;repeat=false&amp;width=720&amp;height=45&amp;lines=Hi%2C+I%27m+Chenxi+Zhang.;CS+Undergraduate+%40+Fudan+University;Multimodal+Memory+%C3%97+LLM+Post-Training" alt="Hi, I'm Chenxi Zhang — CS undergraduate at Fudan University, focused on multimodal memory and LLM post-training" width="720">
+  </picture>
 </p>
 
 <p align="center">

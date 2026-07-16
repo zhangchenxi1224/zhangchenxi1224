@@ -89,7 +89,7 @@ def main() -> None:
     for forbidden in FORBIDDEN_COPY:
         assert forbidden.lower() not in readme.lower(), f"forbidden project/copy content: {forbidden}"
 
-    assert readme.count("<picture>") == 4, "README should contain four responsive visuals"
+    assert readme.count("<picture>") == 5, "README should contain five responsive visuals"
     assert readme.count("<h3") == 3, "README should stay compact with three component labels"
     assert "width=\"48%\"" not in readme, "stats cards should remain legible on mobile"
     assert "spongebob-memory-lab" not in readme, "README still references retired artwork"
