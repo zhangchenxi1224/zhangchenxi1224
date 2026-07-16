@@ -1,4 +1,4 @@
-"""Render the responsive light and dark profile banners.
+"""Render the full-width light and dark profile banners.
 
 The source illustrations are kept in ``assets/source`` so every deployed banner
 can be reproduced locally with Pillow.
@@ -21,8 +21,6 @@ SOURCES = {
 }
 
 DESKTOP_SIZE = (1500, 500)
-MOBILE_SIZE = (900, 600)
-MOBILE_CROP = (320, 0, 1406, 724)
 
 FONT_REGULAR = Path(r"C:\Windows\Fonts\segoeui.ttf")
 FONT_SEMIBOLD = Path(r"C:\Windows\Fonts\seguisb.ttf")
@@ -53,22 +51,6 @@ def horizontal_gradient(size: tuple[int, int], start_x: int, max_alpha: int) -> 
         eased = progress * progress * (3 - 2 * progress)
         alpha = round(max_alpha * eased)
         for y in range(height):
-            pixels[x, y] = (*DEEP_BLUE, alpha)
-    return layer
-
-
-def vertical_gradient(size: tuple[int, int], start_y: int, max_alpha: int) -> Image.Image:
-    """Return a transparent-to-deep-blue bottom gradient."""
-
-    width, height = size
-    layer = Image.new("RGBA", size, (0, 0, 0, 0))
-    pixels = layer.load()
-    span = max(height - start_y - 1, 1)
-    for y in range(start_y, height):
-        progress = (y - start_y) / span
-        eased = progress * progress * (3 - 2 * progress)
-        alpha = round(max_alpha * eased)
-        for x in range(width):
             pixels[x, y] = (*DEEP_BLUE, alpha)
     return layer
 
@@ -119,30 +101,6 @@ def render_desktop(source: Image.Image) -> Image.Image:
     return canvas.convert("RGB")
 
 
-def render_mobile(source: Image.Image) -> Image.Image:
-    canvas = (
-        source.crop(MOBILE_CROP)
-        .resize(MOBILE_SIZE, Image.Resampling.LANCZOS)
-        .convert("RGBA")
-    )
-    canvas = Image.alpha_composite(canvas, vertical_gradient(MOBILE_SIZE, 285, 248))
-    draw = ImageDraw.Draw(canvas)
-
-    draw.text((44, 370), "Chenxi Zhang", font=font(FONT_BOLD, 56), fill=INK)
-    draw.text(
-        (47, 444),
-        "CS UNDERGRADUATE  /  CLASS OF 2028",
-        font=font(FONT_SEMIBOLD, 24),
-        fill=MUTED,
-    )
-
-    pill_font = font(FONT_SEMIBOLD, 19)
-    draw_pill(draw, (46, 505, 278, 550), "Multimodal Memory", pill_font, CYAN)
-    draw_pill(draw, (292, 505, 520, 550), "LLM Post-Training", pill_font, VIOLET)
-    draw_pill(draw, (534, 505, 738, 550), "Reproducible ML", pill_font, CYAN)
-    return canvas.convert("RGB")
-
-
 def save_webp(image: Image.Image, path: Path) -> None:
     image.save(path, format="WEBP", quality=93, method=6, exact=True)
 
@@ -158,9 +116,8 @@ def main() -> None:
             raise ValueError(f"unexpected source size for {source_path}: {artwork.size}")
 
         save_webp(render_desktop(artwork), ASSETS / f"header-{theme}.webp")
-        save_webp(render_mobile(artwork), ASSETS / f"header-mobile-{theme}.webp")
 
-    print("rendered four responsive underwater profile banners")
+    print("rendered two full-width underwater profile banners")
 
 
 if __name__ == "__main__":

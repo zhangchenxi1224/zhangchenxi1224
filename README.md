@@ -1,7 +1,5 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/header-mobile-dark.webp">
-    <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/header-mobile-light.webp">
     <source media="(prefers-color-scheme: dark)" srcset="./assets/header-dark.webp">
     <source media="(prefers-color-scheme: light)" srcset="./assets/header-light.webp">
     <img src="./assets/header-light.webp" alt="Chenxi Zhang coding with SpongeBob in a playful underwater AI laboratory" width="100%">

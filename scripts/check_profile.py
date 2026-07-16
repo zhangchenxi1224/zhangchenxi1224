@@ -13,8 +13,6 @@ ASSETS = ROOT / "assets"
 EXPECTED_BANNERS = {
     "header-light.webp": (1500, 500),
     "header-dark.webp": (1500, 500),
-    "header-mobile-light.webp": (900, 600),
-    "header-mobile-dark.webp": (900, 600),
 }
 
 EXPECTED_SOURCES = {
@@ -93,6 +91,7 @@ def main() -> None:
     assert readme.count("<h3") == 3, "README should stay compact with three component labels"
     assert "width=\"48%\"" not in readme, "stats cards should remain legible on mobile"
     assert "spongebob-memory-lab" not in readme, "README still references retired artwork"
+    assert "header-mobile-" not in readme, "banner must retain its full 3:1 composition at every width"
 
     payload = 0
     for name, expected_size in EXPECTED_BANNERS.items():
@@ -111,7 +110,12 @@ def main() -> None:
         with Image.open(path) as image:
             assert image.size == expected_size, f"{name}: expected {expected_size}, got {image.size}"
 
-    assert payload <= 650_000, f"responsive banner payload is too large: {payload:,} bytes"
+    assert payload <= 400_000, f"two-banner payload is too large: {payload:,} bytes"
+
+    for retired_mobile_banner in ("header-mobile-light.webp", "header-mobile-dark.webp"):
+        assert not (ASSETS / retired_mobile_banner).exists(), (
+            f"retired enlarged mobile banner still exists: {retired_mobile_banner}"
+        )
 
     for relative_path, expected_actions in PINNED_ACTIONS.items():
         workflow = (ROOT / relative_path).read_text(encoding="utf-8")
@@ -124,7 +128,7 @@ def main() -> None:
     assert "contents: read" in snake and "contents: write" in snake
     assert "pull_request:" not in snake, "snake publisher must not run on pull requests"
 
-    print(f"profile checks passed; four-banner payload {payload:,} bytes")
+    print(f"profile checks passed; two-banner payload {payload:,} bytes")
 
 
 if __name__ == "__main__":
