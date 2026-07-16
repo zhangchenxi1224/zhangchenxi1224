@@ -1,31 +1,34 @@
-# Image 2 source prompts
+# Image 2 source artwork
 
-The four `.webp` files in this directory are compressed source artworks generated with OpenAI Image 2 through Codex's built-in image-generation tool. Exact typography, cropping, theme treatment, and output compression are applied deterministically by `scripts/render_assets.py`.
+The published profile uses one text-free Image 2 illustration as its visual anchor. All interface text, theme frames, project widgets, responsive mobile layouts, and animation frames are rendered deterministically by `scripts/render_assets.py`.
 
-All prompts shared these constraints: no text, letters, numbers, logos, watermarks, people, university marks, generic circuit boards, or dense visual noise.
+## `spongebob-memory-lab-dark-image2-v2.png`
 
-## Dark hero
+- **Mode:** built-in OpenAI Image 2 generation
+- **Reference:** the SpongeBob avatar image supplied by Chenxi Zhang; used for character identity only, not pasted or enlarged
+- **Use case:** `stylized-concept`
+- **Asset type:** dark-theme GitHub profile hero artwork
 
-- **Use:** GitHub Profile README hero background.
-- **Composition:** Ultra-wide; left 55% calm negative space; three translucent visual-state planes on the right flow into a circular latent-memory core and then an ordered language-token lattice.
-- **Style:** Premium editorial technology illustration with refined glass and matte surfaces.
-- **Palette:** `#07111F`, `#0B1220`, `#8B5CF6`, `#6366F1`, `#22D3EE`, and restrained off-white highlights.
+### Final prompt
 
-## Light hero
+```text
+Create an original polished scene titled conceptually “Chenxi’s Underwater Memory Lab.” SpongeBob is a joyful young research assistant inside a whimsical underwater laboratory, carefully feeding three floating visual-frame postcards into a glowing bubble-shaped memory chamber. The chamber stores small luminous memory bubbles, then releases an ordered stream of tiny cyan and violet token bubbles suggesting language reasoning. Include one small jellyfish-shaped signal monitor and playful porthole details.
 
-- **Use:** Light-theme counterpart to the hero above.
-- **Composition:** Same visual-state-to-memory-to-language flow, with left 55% reserved for typography.
-- **Style:** Airy editorial technology illustration using frosted glass and matte ceramic surfaces.
-- **Palette:** `#F8FAFC`, `#07111F`, `#8B5CF6`, `#6366F1`, and restrained `#22D3EE` accents.
+Use the supplied avatar only as a character identity and visual reference. Keep SpongeBob immediately recognizable, including the yellow square sponge body, large expressive eyes, white shirt, red tie, brown shorts, and cheerful energy. Do not simply enlarge or paste the low-resolution reference.
 
-## Vision-language memory cover
+Scene/backdrop: elegant deep-sea research desk and spatial interface, sparse and uncluttered, midnight navy water with subtle bubbles and soft caustic light.
 
-- **Use:** Wide project cover.
-- **Composition:** Left 60% negative space; a sequence of observation panels enters a compact recurrent memory chamber with a looped state path and a language-reasoning output structure on the right.
-- **Mood:** Scientific, credible, stateful, and engineered.
+Style/medium: premium editorial 3D illustration with tactile clay, acrylic, and softly translucent bubble materials; charming and sophisticated, suitable for a polished personal tech profile rather than a children’s screenshot.
 
-## Math reasoning cover
+Composition/framing: wide landscape; keep the left 52% calm and low-detail for deterministic UI text overlays; place SpongeBob, the memory chamber, and visual-to-memory-to-reasoning action on the right 48%; preserve generous margins; readable when cropped to a 1600×560 banner.
 
-- **Use:** Wide project cover.
-- **Composition:** Left 60% negative space; an abstract problem card passes through three reasoning transformations, branches into candidate paths, and converges on one verified output state.
-- **Mood:** Rigorous, analytical, empirical, and honest about selection and fallback.
+Lighting/mood: curious, optimistic, playful, soft studio-underwater glow.
+
+Color palette: #07111F and #0B1220, violet #8B5CF6, indigo #6366F1, cyan #22D3EE, SpongeBob yellow as a controlled accent.
+
+Constraints: recognizable SpongeBob only; no other characters; no text, letters, numbers, logos, brand marks, watermark, or institutional logos.
+
+Avoid: copying the exact source pose, low-resolution texture, chaotic cartoon background, corporate stock-tech imagery, robot heads, literal brains or circuit boards, aggressive neon cyberpunk, dense clutter.
+```
+
+The light and dark GitHub variants deliberately share this same illustration. Theme adaptation happens in the surrounding Memory Lab interface, which keeps the character colors stable and avoids a visually inconsistent second composition.
