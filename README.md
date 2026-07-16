@@ -46,26 +46,6 @@
 
 <br>
 
-<h3 align="center">GitHub Activity</h3>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile/stats-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile/stats-light.svg">
-    <img src="./profile/stats-light.svg" alt="Chenxi Zhang's public GitHub activity" width="495">
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile/top-langs-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile/top-langs-light.svg">
-    <img src="./profile/top-langs-light.svg" alt="Languages used in Chenxi Zhang's public repositories" width="495">
-  </picture>
-</p>
-
-<br>
-
 <h3 align="center">Contribution Current</h3>
 
 <p align="center">

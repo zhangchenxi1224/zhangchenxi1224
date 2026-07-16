@@ -30,7 +30,6 @@ REQUIRED_COPY = (
     "关注可复现的多模态记忆、LLM 后训练与可靠评测。",
     "mailto:OLzcx1224@outlook.com",
     "Toolbox",
-    "GitHub Activity",
     "Contribution Current",
 )
 
@@ -43,10 +42,6 @@ REQUIRED_COMPONENTS = (
     "img.shields.io/badge/Diffusers",
     "PEFT%20%2F%20LoRA",
     "img.shields.io/badge/Slurm",
-    "./profile/stats-light.svg",
-    "./profile/stats-dark.svg",
-    "./profile/top-langs-light.svg",
-    "./profile/top-langs-dark.svg",
     "/output/github-contribution-grid-snake.svg",
     "/output/github-contribution-grid-snake-dark.svg",
 )
@@ -62,15 +57,12 @@ FORBIDDEN_COPY = (
     "AI Researcher",
     "Quant Finance",
     "visitor count",
+    "GitHub Activity",
+    "Languages in Public Repositories",
+    "./profile/",
 )
 
 PINNED_ACTIONS = {
-    ".github/workflows/update-stats.yml": (
-        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
-        "stats-organization/github-readme-stats-action@f9d8133845f40d659a754f78b8484983ba766448",
-        "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
-        "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c",
-    ),
     ".github/workflows/snake.yml": (
         "Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b",
         "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
@@ -87,9 +79,8 @@ def main() -> None:
     for forbidden in FORBIDDEN_COPY:
         assert forbidden.lower() not in readme.lower(), f"forbidden project/copy content: {forbidden}"
 
-    assert readme.count("<picture>") == 5, "README should contain five responsive visuals"
-    assert readme.count("<h3") == 3, "README should stay compact with three component labels"
-    assert "width=\"48%\"" not in readme, "stats cards should remain legible on mobile"
+    assert readme.count("<picture>") == 3, "README should contain three responsive visuals"
+    assert readme.count("<h3") == 2, "README should stay compact with two component labels"
     assert "spongebob-memory-lab" not in readme, "README still references retired artwork"
     assert "header-mobile-" not in readme, "banner must retain its full 3:1 composition at every width"
 
@@ -116,6 +107,14 @@ def main() -> None:
         assert not (ASSETS / retired_mobile_banner).exists(), (
             f"retired enlarged mobile banner still exists: {retired_mobile_banner}"
         )
+
+    assert not (ROOT / ".github/workflows/update-stats.yml").exists(), (
+        "retired stats workflow still exists"
+    )
+    profile_dir = ROOT / "profile"
+    assert not profile_dir.exists() or not any(profile_dir.iterdir()), (
+        "retired GitHub activity cards still exist"
+    )
 
     for relative_path, expected_actions in PINNED_ACTIONS.items():
         workflow = (ROOT / relative_path).read_text(encoding="utf-8")
